@@ -1,0 +1,50 @@
+.m-b-20.clearfix
+  .page-title.pull-left
+    h3.pull-left
+      strong Manage Events
+.row(ng-show="visibility")
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        .col-md-6
+        .col-md-6
+          .DTTT_container
+            a.btn.btn-success.m-t-10(href="/addevent")
+              i.fa.fa-plus.p-r-10
+              | Add an Event
+      .panel-body
+        .row
+          .col-md-12.col-sm-12.col-xs-12.table-responsive
+            table.table.table-striped.table-hover
+              thead.no-bd
+                tr
+                  th
+                    a(href="", ng-click="reverse=!reverse;order('name', reverse)")
+                      strong Name
+                  th
+                    a(href="", ng-click="reverse=!reverse;order('description', reverse)")
+                      strong Description
+                  th
+                    a(href="", ng-click="reverse=!reverse;order('start_date', reverse)")
+                      strong Start date
+                  th
+                    a(href="", ng-click="reverse=!reverse;order('end_date', reverse)")
+                      strong End date
+                  th
+                    a(href="", ng-click="reverse=!reverse;order('event_data.number_of_people', reverse)")
+                      strong People
+                  th.text-center
+                    strong Action
+              tbody.no-bd-y
+                tr(ng-repeat="event in allEvents")
+                  td(ng-bind="event.name")
+                  td(ng-bind="event.description")
+                  td(ng-bind="event.start_date | date: 'yyyy-MM-dd'")
+                  td(ng-bind="event.end_date| date: 'yyyy-MM-dd'")
+                  td(ng-bind="event.event_data.number_of_people")  
+                  td.text-center
+                    a.btn.btn-warning(href="/event/edit/{{event._id}}", rel="tooltip", title="Edit this Event", type="button") Edit    
+                    // &nbsp;
+                    // a.btn.btn-danger(href="#", style="padding: 7px; line-height: 1.3;") Delete  
+            .row
+              include paging.jade

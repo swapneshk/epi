@@ -1,0 +1,51 @@
+#main-content
+  // BEGIN MODAL
+  #event-modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal", aria-hidden="true") &#215;
+          h4.modal-title
+            strong Manage
+            | my events
+        .modal-body
+          p
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Close
+          button.btn.btn-success.save-event(type="button") Create event
+          button.btn.btn-danger.delete-event(type="button", data-dismiss="modal") Delete
+  // END MODAL
+  .widget-fullwidth.bg-gray-light.row
+    .col-md-3.p-0
+      .widget.bg-gray-light
+        .widget-body
+          .row
+            .col-md-12.col-sm-12.col-xs-12
+              h2#calender-current-day.text-white.semi-bold Events Manager
+              h3#calender-current-date.text-white Editable and dragable
+              #external-events
+                br
+                br
+                p Drag and drop your event or click in the calendar
+                .external-event.bg-green(data-class="bg-green", style="position: relative;")
+                  i.fa.fa-move
+                  | Sport
+                .external-event.bg-purple(data-class="bg-purple", style="position: relative;")
+                  i.fa.fa-move
+                  | Meeting
+                .external-event.bg-red(data-class="bg-red", style="position: relative;")
+                  i.fa.fa-move
+                  | Work
+                .external-event.bg-blue(data-class="bg-blue", style="position: relative;")
+                  i.fa.fa-move
+                  | Children
+                p.m-t-40
+                  label
+                    input#drop-remove(type="checkbox")
+                    | remove after drop
+    .col-md-9.p-0.no-bd
+      .widget.bg-white
+        .widget-body
+          .row
+            .col-md-12.col-sm-12.col-xs-12
+              #calendar

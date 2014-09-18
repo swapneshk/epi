@@ -1,0 +1,88 @@
+.page-title(ng-controller="ShowClientController")
+  i.icon-custom-left
+  h3
+    img.m-r-20(alt="invoice", src="assets/img/various/invoice.png")
+    strong Client Information
+  br   
+.row
+  .col-md-12
+    .tabcordion
+      #myTabContent.tab-content
+        #order_resume.tab-pane.fade.active.in
+          .row.p-20
+            .col-md-12
+              h3.m-t-0.m-b-20 General Info
+              form.form-horizontal.p-20
+                .form-group
+                  .col-sm-2
+                    | Name:
+                  .col-sm-7
+                    strong {{client.name}}
+                .form-group
+                  .col-sm-2
+                    | Street 1:
+                  .col-sm-7
+                    strong {{client.address.street1}}
+                .form-group
+                  .col-sm-2
+                    | Street 2:
+                  .col-sm-7
+                    strong {{client.address.street2}}
+                .form-group
+                  .col-sm-2
+                    | City:
+                  .col-sm-7
+                    strong {{client.address.city}}
+                .form-group
+                  .col-sm-2
+                    | Description:
+                  .col-sm-10
+                    strong {{client.description}}
+          .row.p-20
+            .col-md-12
+              h3.m-t-0.m-b-20 Contact Info
+              form.form-horizontal.p-20
+                .form-group
+                  .col-sm-2
+                    | Contact Name:
+                  .col-sm-7
+                    strong {{client.contact_name}}
+                .form-group
+                  .col-sm-2
+                    | Contact Email:
+                  .col-sm-7
+                    strong {{client.contact_email}}
+                .form-group
+                  .col-sm-2
+                    | Contact Phone:
+                  .col-sm-7
+                    strong {{client.contact_phone}}
+                .form-group
+                  .col-sm-2
+                    | Contact Fax:
+                  .col-sm-7
+                    strong {{client.contact_fax}}
+          .row.p-20
+            .col-md-12
+              h3.m-t-0.m-b-20 Other Details 
+              form.form-horizontal.p-20
+                .form-group
+                  .col-sm-2
+                    | Account:
+                  .col-sm-7
+                    strong {{client.is_account}}
+                .form-group
+                  .col-sm-2
+                    | Active:
+                  .col-sm-7
+                    strong {{client.is_active}}
+                .form-group
+                  .col-sm-2
+                    | Created Date:
+                  .col-sm-7
+                    strong {{client.created_date | date: 'yyyy-MM-dd'}}
+                .form-group
+                  .col-sm-2
+                    | Modified On:
+                  .col-sm-7
+                    strong {{client.modified_on | date: 'yyyy-MM-dd'}}

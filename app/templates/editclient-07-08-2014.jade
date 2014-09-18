@@ -1,0 +1,86 @@
+.page-title
+  h3
+    strong {{action}} Client
+.row(ng-controller="EditClientController")
+  .col-md-12
+    .tabcordion
+      #myTabContent.tab-content
+        #product_general.tab-pane.fade.active.in
+          .row
+            .col-md-12
+              form#form1.form-horizontal(name="clientForm")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Name
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="John", ng-model="client.name", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Street 1
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="street 1", ng-model="client.address.street1", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Street 2
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Street 2", ng-model="client.address.street2", required="required")                                         
+                .form-group
+                  label.col-sm-2.control-label
+                    | City
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="California", ng-model="client.address.city", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Description
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Description text", ng-model="client.description", required="required")                      
+                .form-group
+                  label.col-sm-2.control-label
+                    | Contact Name
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="John Major", ng-model="client.contact_name", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Contact Email
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="John Major", ng-model="client.contact_email", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Contact Phone
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="John Major", ng-model="client.contact_phone", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Contact Fax
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="John Major", ng-model="client.contact_fax", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Is Account
+                  .col-sm-7
+                    select(ng-model="client.is_account", ng-init="Yes")
+                     option Yes
+                     option No
+                .form-group
+                  label.col-sm-2.control-label
+                    | Is Active
+                  .col-sm-7
+                    select(ng-model="client.is_active")
+                     option(selected="selected") Yes
+                     option No
+              .col-md-12.m-t-20.m-b-40.align-center
+                button.btn.btn-default.m-r-10.m-t-10(href="#", ng-click="cleardata()")
+                  i.fa.fa-reply
+                  | Clear
+                button.btn.btn-success.m-t-10(href="#" ng-click="editClient(client)")
+                  i.fa.fa-check
+                  | Save changes

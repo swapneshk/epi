@@ -1,0 +1,83 @@
+.page-title
+  h3
+    strong Edit Employee
+.row(ng-controller="EditEmployeeController")
+  .col-md-12
+    .tabcordion
+      #myTabContent.tab-content
+        #product_general.tab-pane.fade.active.in
+          .row
+            .col-md-12
+              form#form1.form-horizontal(name="employeeForm")
+                .form-group
+                  label.col-sm-2.control-label
+                    | First Name
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="John", ng-model="employee.first_name", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Last Name
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Doe", ng-model="employee.last_name")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Email
+                    span.asterisk *
+                  .col-sm-7
+                    input.form-control(type="email", placeholder="useremail@example.com", ng-model="employee.email", required="required")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Address
+                    span.asterisk 
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Address Line 1", ng-model="employee.address.line1")
+                .form-group
+                  label.col-sm-2.control-label
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Address Line 2", ng-model="employee.address.line2")
+                .form-group
+                  label.col-sm-2.control-label
+                    | City
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Chicago", ng-model="employee.address.city")
+                .form-group
+                  label.col-sm-2.control-label
+                    | State
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="Illinois", ng-model="employee.address.state")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Zip
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="123456", ng-model="employee.address.zip")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Phone
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="9087654321", ng-model="employee.phone")
+                .form-group
+                  label.col-sm-2.control-label      
+                    | Driver License
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="S4-XXX-XXXX", ng-model="employee.driver_license")
+                .form-group
+                  label.col-sm-2.control-label
+                    | Date Of Birth
+                    span.asterisk
+                  .col-sm-7
+                    input.form-control(type="text", placeholder="YYYY-MM-DD: 2014-07-30", ng-model="employee.date_of_birth")
+              .col-md-12.m-t-20.m-b-40.align-center
+                button.btn.btn-default.m-r-10.m-t-10(href="#", ng-click="cleardata()")
+                  i.fa.fa-reply
+                  | Clear
+                button.btn.btn-success.m-t-10(href="#" ng-click="updateEmployee(employee)")
+                  i.fa.fa-check
+                  | Save changes
+
